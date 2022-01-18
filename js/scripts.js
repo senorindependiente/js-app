@@ -23,14 +23,6 @@ let pokemonList = [
   },
 ];
 
-let i = 0;
-
-let names = pokemonList[i].name;
-let heights =  pokemonList[i].height;
-
-
-
-for ( i = 0; i < pokemonList.length; i++) {
-  document.write(
-  names + " (height: " + heights + " )");
+for (i = 0; i < pokemonList.length; i++) {
+  document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + " )");
 }
