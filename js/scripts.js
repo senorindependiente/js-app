@@ -25,4 +25,12 @@ let pokemonList = [
 
 for (i = 0; i < pokemonList.length; i++) {
   document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + " )");
+
+  if (pokemonList[i].height > 3) {
+
+
+
+    document.write("So tall!")
+  }
+
 }
