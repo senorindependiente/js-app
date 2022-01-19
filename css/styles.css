@@ -22,7 +22,7 @@
   }
   
   .title{
-    
+    text-shadow: 2px 2px rgb(7, 7, 7);
     font-weight: 800;
     margin-top:2rem;
     font-size:clamp(1rem, 3vw, 3rem);
@@ -40,6 +40,7 @@
   
   
   .card-container-item{
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     border-radius: 5px;
     border:2px solid var(--secondary-color);
   }

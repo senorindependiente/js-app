@@ -35,3 +35,4 @@ for (i = 0; i < pokemonList.length; i++) {
   }
 
 }
+
