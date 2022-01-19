@@ -1,3 +1,4 @@
+//setting up an array list of objects for the profile of the diferent pokemons:
 let pokemonList = [
   {
     name: "Liepard",
@@ -22,10 +23,10 @@ let pokemonList = [
     types: ["fighting", "rock", "steel", "fire", "ice"],
   },
 ];
-
+// looping trough the array list of objects in order to display in the browser:
 for (i = 0; i < pokemonList.length; i++) {
   document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + " )");
-
+//setting up a condition to add remark to alle pokomen with a height above 3:
   if (pokemonList[i].height > 3) {
 
 
