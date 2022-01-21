@@ -23,16 +23,8 @@ let pokemonList = [
     types: ["fighting", "rock", "steel", "fire", "ice"],
   },
 ];
-// looping trough the array list of objects in order to display in the browser:
-for (i = 0; i < pokemonList.length; i++) {
-  document.write("<p>" + pokemonList[i].name + " (height: " + pokemonList[i].height + " )" + "</p>");
-//setting up a condition to add remark to alle pokomen with a height above 3:
-  if (pokemonList[i].height > 3) {
-
-
-
-    document.write("So tall!")
-  }
-
-}
+//forEach method to iterate over the Pokémon in the pokemonList array in order to print the details of each one
+pokemonList.forEach( pokemon => {
+  document.write(pokemon.name + " (" + pokemon.height + ") " + " <br>");
+});
 
