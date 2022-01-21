@@ -35,12 +35,6 @@ let pokemonRepository = (function () {
     pokemonList.push(pokemon);
   }
 
-  //function addv(typeof){
-  //if(typeof === {}){
-
-  //}
-  //}
-
   //IIFE will return an object with two methods "getAll" and "add"
 
   return {
