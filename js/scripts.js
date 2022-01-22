@@ -44,9 +44,7 @@ let pokemonRepository = (function () {
 })();
 
 // IIFE returned function to retrieve "pokemonList"
-console.log(pokemonRepository.getAll());
-
 //forEach method to iterate over the Pokémon in the pokemonList array in order to print the details of each one
-//pokemonList.forEach( pokemon => {
-//document.write(pokemon.name + " (" + pokemon.height + ") " + " <br>");
-//});
+pokemonRepository.getAll().forEach( pokemon => {
+document.write(pokemon.name + " (" + pokemon.height + ") " + " <br>");
+});
