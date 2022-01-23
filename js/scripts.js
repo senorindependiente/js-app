@@ -26,25 +26,49 @@ let pokemonRepository = (function () {
       types: ["fighting", "rock", "steel", "fire", "ice"],
     },
   ];
+
   //added function to return the "pokemonList"
   function getAll() {
     return pokemonList;
   }
+
   //added function to add new pokemen to the "pokemonList"
   function add(pokemon) {
     pokemonList.push(pokemon);
   }
 
-  //IIFE will return an object with two methods "getAll" and "add"
+  //added function to create buttons which display each pokemon in HTML
+  function addListItem(pokemon) {
+    let list = document.querySelector(".pokemon-list");
+    let listItem = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerHTML = pokemon.name;
+    button.classList.add("btn");
+    listItem.appendChild(button);
+    list.appendChild(listItem);
 
+    //adding eventhandler to the button that will show the logged pokemon  on click
+    button.addEventListener("click", () => {
+      showDetails(pokemon.name);
+    });
+  }
+
+  //adding function to log the name of the pokemon
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+
+  
+  //IIFE will return an object with  methods "getAll" and "add" and "addListItem"
   return {
     getAll: getAll,
     add: add,
+    addListItem: addListItem
   };
 })();
 
 // IIFE returned function to retrieve "pokemonList"
-//forEach method to iterate over the Pokémon in the pokemonList array in order to print the details of each one
-pokemonRepository.getAll().forEach( pokemon => {
-document.write(pokemon.name + " (" + pokemon.height + ") " + " <br>");
+//forEach method iterate trough each pokemon to display button with pokemon name in the browser
+pokemonRepository.getAll().forEach((pokemon) => {
+  pokemonRepository.addListItem(pokemon);
 });

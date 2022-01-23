@@ -1,59 +1,87 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-font: "Nunito", sans-serif;
+  --primary-color: linear-gradient(220.55deg, #fadd76 0%, #9f3311 100%);
+  --secondary-color: #212f45;
+  --third-color: #faf9f9;
+}
+
+body {
+  background: var(--primary-color);
+  height: 100vh;
+  color: var(--secondary-color);
+  font-family: var(--primary-font);
+}
+
+.title {
+  text-shadow: 2px 2px rgb(7, 7, 7);
+  font-weight: 800;
+  margin-top: 2rem;
+  font-size: clamp(1rem, 3vw, 3rem);
+  text-align: center;
+}
+
+.pokemon-list {
+  margin: 4rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.pokemon-list li {
+  font-family: var(--primary-font);
+  list-style: none;
+}
+
+.btn {
+  font-size: clamp(0.7rem, 2vw, 1.8rem);
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+  border-radius: 5px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border: 1px white solid;
+  transition: 0.5s linear;
+}
+
+.btn:hover {
+  filter: invert(1);
+}
+
+@media all and (max-width: 600px) {
+  .pokemon-list {
+    flex-direction: column;
   }
-  
-  :root{
-    --primary-font: 'Nunito', sans-serif;
-    --primary-color: linear-gradient(220.55deg, #FADD76 0%, #9F3311 100%);
-    --secondary-color:#212f45;
-    --third-color:#faf9f9;
-  }
-  
-  
-  
-  body{
-    
-    background:var(--primary-color);
-    height:100vh;
-    color:var(--secondary-color);
-    font-family: var(--primary-font);
-  }
-  
-  .title{
-    text-shadow: 2px 2px rgb(7, 7, 7);
-    font-weight: 800;
-    margin-top:2rem;
-    font-size:clamp(1rem, 3vw, 3rem);
-    text-align: center;
-  }
-  
-  .card-container{
-  
-  margin:2rem;
-    display: grid;
-  align-content:center;
-  grid-template-columns:1fr 1fr 1fr;
+}
+
+.card-container {
+  margin: 2rem;
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
+}
+
+.card-container-item {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-radius: 5px;
+  border: 2px solid var(--secondary-color);
+}
+
+@media all and (max-width: 500px) {
+  .card-container {
+    grid-template-columns: 1fr;
   }
-  
-  
-  .card-container-item{
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    border-radius: 5px;
-    border:2px solid var(--secondary-color);
+}
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr;
   }
-  
-  @media all and (max-width: 500px) {
-    .card-container {
-      grid-template-columns: 1fr;
-    }
-  }
-  @media all and (min-width: 500px) and (max-width: 750px) {
-    .card-container {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  }
-  
+}
