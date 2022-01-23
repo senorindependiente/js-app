@@ -5,7 +5,7 @@
 }
 
 :root {
-  --primary-font: "Nunito", sans-serif;
+  --primary-font: 'Sedgwick Ave', cursive;
   --primary-color: linear-gradient(220.55deg, #fadd76 0%, #9f3311 100%);
   --secondary-color: #212f45;
   --third-color: #faf9f9;
@@ -19,27 +19,29 @@ body {
 }
 
 .title {
-  text-shadow: 2px 2px rgb(7, 7, 7);
+
   font-weight: 800;
   margin-top: 2rem;
-  font-size: clamp(1rem, 3vw, 3rem);
+  font-size: clamp(1rem, 4vw, 4rem);
   text-align: center;
 }
 
 .pokemon-list {
-  margin: 4rem 0rem;
+  margin: 4rem 15rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
 }
 
 .pokemon-list li {
-  font-family: var(--primary-font);
+  
   list-style: none;
 }
 
 .btn {
+  font-family: var(--primary-font);
   font-size: clamp(0.7rem, 2vw, 1.8rem);
   margin: 0.5rem;
   padding: 0.5rem 1rem;
