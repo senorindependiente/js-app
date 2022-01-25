@@ -34,17 +34,34 @@ let pokemonRepository = (function () {
 
   //added function to add new pokemen to the "pokemonList"
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    //checks that only certain properties will be accepted when adding a new pokemon
+    if(
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types" in pokemon
+    ) {
+      //if property has been validated, new pokemon will be added
+    pokemonList.push(pokemon);}
+    else {
+      // otherwise error message 
+      console.log("error");
+    }
   }
 
   //added function to create buttons which display each pokemon in HTML
   function addListItem(pokemon) {
+// selecting elements
     let list = document.querySelector(".pokemon-list");
     let listItem = document.createElement("li");
     let button = document.createElement("button");
+    // creating text inside the button element
     button.innerHTML = pokemon.name;
+    //adding a classlist of button
     button.classList.add("btn");
+    //add button as a list item
     listItem.appendChild(button);
+    //adding the list time to the main pokemon list
     list.appendChild(listItem);
 
     //adding eventhandler to the button that will show the logged pokemon  on click
