@@ -27,7 +27,7 @@ body {
 }
 
 .pokemon-list {
-  margin: 4rem 15rem;
+  margin: 4rem 10rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
