@@ -48,11 +48,6 @@ let pokemonRepository = (function () {
     });
   }
 
-  //adding function to log the name of the pokemon
-  //function showDetails(pokemon) {
-  //console.log(pokemon);
-  //}
-
   //adding promise function
   function loadList() {
     //using the fetch method to get pokemon API "apiUrl", the result will be the "response", which is a promise
@@ -119,6 +114,16 @@ let pokemonRepository = (function () {
     loadList: loadList,
     loadDetails: loadDetails,
   };
+
+
+
+
+
+
+
+
+
+  
 })();
 
 //this will call the api to display
@@ -129,3 +134,67 @@ pokemonRepository.loadList().then(function () {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
+
+
+
+
+//adding a modal Window that will open and display name+heigh+and picture of pokemon
+let modalContainer = document.querySelector('#modal-container');
+//creating function to show modal window
+ function showModal(title, text) {
+
+   //setting the modal windwo to blank
+   modalContainer.innerHTML = '';
+
+   //adding elements to the modal window
+   let modal = document.createElement('div');
+   modal.classList.add('modal');
+
+   let closeButtonElement = document.createElement('button');
+   closeButtonElement.classList.add('modal-close');
+   closeButtonElement.innerText = 'Close';
+   closeButtonElement.addEventListener('click', hideModal);
+
+   let titleElement = document.createElement('h1');
+   titleElement.innerText = title;
+
+   let contentElement = document.createElement('p');
+   contentElement.innerText = text;
+// adding all the created elements to the modal window
+   modal.appendChild(closeButtonElement);
+   modal.appendChild(titleElement);
+   modal.appendChild(contentElement);
+   modalContainer.appendChild(modal);
+
+//adding  css class of "is-visible" to remove the default state of display=none
+   modalContainer.classList.add('is-visible');
+ }
+//creae function to hide the modal window by removing the css class "is-visible"
+ function hideModal() {
+   modalContainer.classList.remove('is-visible');
+ }
+//creating an event that will close the modal window with Escape button
+ window.addEventListener('keydown', (e) => {
+   if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+     hideModal();  
+   }
+ });
+
+ //creating an event that will close the modal window when clicking on it 
+ modalContainer.addEventListener('click', (e) => {
+   // Since this is also triggered when clicking INSIDE the modal
+   // We only want to close if the user clicks directly on the overlay
+   let target = e.target;
+   if (target === modalContainer) {
+     hideModal();
+   }
+ });
+//creating and event that whill execute the showModal function to display information on click 
+ document.querySelector('#show-modal').addEventListener('click', () => {
+   showModal();
+ });
+
+
+
+
