@@ -11,6 +11,7 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
+
   //added function to add new pokemen to the "pokemonList"
   function add(pokemon) {
     //checks that only certain properties will be accepted when adding a new pokemon
@@ -26,6 +27,7 @@ let pokemonRepository = (function () {
       console.log("error");
     }
   }
+
 
   //added function to create buttons which display each pokemon in HTML
   function addListItem(pokemon) {
@@ -47,6 +49,7 @@ let pokemonRepository = (function () {
       showDetails(pokemon);
     });
   }
+
 
   //adding promise function
   function loadList() {
@@ -78,6 +81,7 @@ let pokemonRepository = (function () {
     );
   }
 
+
   // use the "detailsUrl" property to load the detailed data for a given Pokémon.
   //for this, you add a loadDetails() function, which takes a Pokémon item as an argument
   function loadDetails(item) {
@@ -98,6 +102,7 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
+
 
   //adding a modal Window that will open and display name+heigh+and picture of pokemon
   let modalContainer = document.querySelector("#modal-container");
@@ -140,6 +145,7 @@ let pokemonRepository = (function () {
     }
   });
 
+
   //creating an event that will close the modal window when clicking on it
   modalContainer.addEventListener("click", (e) => {
     // Since this is also triggered when clicking INSIDE the modal
@@ -149,21 +155,23 @@ let pokemonRepository = (function () {
       hideModal();
     }
   });
+
   //creating and event that whill execute the showModal function to display information on click
   document.querySelector("#show-modal").addEventListener("click", () => {
     showModal();
   });
+
 
   //the showDetails() function is executed when a user clicks on a Pokémon and you get the Pokémon’s details from the server.
   //showDetails function will execute
   function showDetails(item) {
     //the loadDetails function with pokemon as parameter and adds a function as a promise and then to return a console log
     loadDetails(item).then(function () {
-
-      //added name and height to display in the modal window
-      showModal(item.name, item.height);
+      //added name and height to display in the modal window dynamically
+      showModal(item.name, " Height: " + item.height);
     });
   }
+
 
   //IIFE will return an object with  methods to have access to these previously created functions
   return {
@@ -174,6 +182,7 @@ let pokemonRepository = (function () {
     loadDetails: loadDetails,
   };
 })();
+
 
 //this will call the api to display
 pokemonRepository.loadList().then(function () {
