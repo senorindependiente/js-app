@@ -102,7 +102,7 @@ let pokemonRepository = (function () {
   //adding a modal Window that will open and display name+heigh+and picture of pokemon
   let modalContainer = document.querySelector("#modal-container");
   //creating function to show modal window
-  function showModal(title, text) {
+  function showModal(title, text,image) {
     //setting the modal windwo to blank
     modalContainer.innerHTML = "";
 
@@ -111,12 +111,13 @@ let pokemonRepository = (function () {
     modal.classList.add("modal");
 
     let imageElement = document.createElement("img");
+    imageElement.innerText = image
     imageElement.classList.add("pic");
-    imageElement.src = "";
+    imageElement.src = image
 
     let closeButtonElement = document.createElement("button");
     closeButtonElement.classList.add("modal-close");
-    closeButtonElement.innerText = "Close";
+    closeButtonElement.innerText = "X";
     closeButtonElement.addEventListener("click", hideModal);
 
     let titleElement = document.createElement("h1");
