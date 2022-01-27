@@ -140,6 +140,7 @@ margin:0.5rem;
 .modal h1 {
   margin-top: 1rem;
   font-size: clamp(1.5rem, 3.5vw, 4rem);
+  text-transform: uppercase;
 }
 
 .modal p {
