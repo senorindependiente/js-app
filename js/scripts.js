@@ -36,12 +36,16 @@ let pokemonRepository = (function () {
 
     //adding a bootstrap class of button
     button.classList.add("btn-primary") 
+    //adding data-set 
+    
     // creating text inside the button element
     button.innerHTML = pokemon.name;
     //adding a classlist of button
     button.classList.add("btn");
     //add button as a list item
     listItem.appendChild(button);
+    //adding bootstrap class "group-list-item"
+listItem.classList.add("group-list-item")
     //adding the list time to the main pokemon list
     list.appendChild(listItem);
 
@@ -108,7 +112,7 @@ function showModal(item){
   let modalTitle = $(".modal-title");
   let modalHeader = $(".modal-header");
   
-  //let $modalContainer = $("#modal-container")
+  let $modalContainer = $("#modal-container")
   
   //clear existing content of the modal
   

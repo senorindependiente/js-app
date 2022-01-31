@@ -4,35 +4,29 @@
   box-sizing: border-box;
 }
 
-:root{
-  --primary-font: 'Sedgwick Ave', cursive;
-  --primary-color: linear-gradient(220.55deg, #FADD76 0%, #9F3311 100%);
-  --secondary-color:#212f45;
-  --third-color:#faf9f9;
+:root {
+  --primary-font: "Sedgwick Ave", cursive;
+  --primary-color: linear-gradient(220.55deg, #fadd76 0%, #9f3311 100%);
+  --secondary-color: #212f45;
+  --third-color: #faf9f9;
 }
 
+body {
+  background: var(--primary-color);
 
-
-body{
-  
-  background:var(--primary-color);
-  
-  color:var(--secondary-color);
+  color: var(--secondary-color);
   font-family: var(--primary-font);
 }
 
-.title{
+.title {
   font-weight: 800;
-  margin-top:2rem;
-  font-size:clamp(1.3rem, 4vw, 4em);
+  margin-top: 2rem;
+  font-size: clamp(1.3rem, 4vw, 4em);
   text-align: center;
- 
 }
 
-
-.pokemon-list{
-  
-margin:4rem 15rem;
+.pokemon-list {
+  margin: 4rem 15rem;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -41,52 +35,36 @@ margin:4rem 15rem;
   text-align: center;
 }
 
-.pokemon-list li{
-  
+.pokemon-list li {
   font-family: var(--primary-font);
   list-style: none;
 }
 
-
-.btn{
+.btn,
+.btn-primary {
   font-size: clamp(0.7rem, 2vw, 1.8rem);
-margin:0.5rem;
-  padding:0.5rem 1rem;
-  background-color:var(--secondary-color);
-  color:var(--third-color);
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  color: var(--third-color);
   border-radius: 5px;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    border:1px white solid;
-    transition: 0.5s linear;
-   font-family: 'Sedgwick Ave', cursive;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border: 1px white solid;
+  transition: 0.5s linear;
+  font-family: "Sedgwick Ave", cursive;
 }
 
-.btn:hover{
-  filter:invert(1);
+.btn:hover {
+  filter: invert(1);
 }
-
 
 @media all and (max-width: 600px) {
   .pokemon-list {
     flex-direction: column;
   }
-
 }
 
-
-
-
-
-.pic{
-  height:  auto;
+.pic {
+  height: auto;
   width: 60%;
 }
-
-
-
-
-
-
-
-
-
