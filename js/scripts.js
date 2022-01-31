@@ -33,6 +33,9 @@ let pokemonRepository = (function () {
     let list = document.querySelector(".pokemon-list");
     let listItem = document.createElement("li");
     let button = document.createElement("button");
+
+    //adding a bootstrap class of button
+    button.classList.add("btn-primary") 
     // creating text inside the button element
     button.innerHTML = pokemon.name;
     //adding a classlist of button
