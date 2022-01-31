@@ -99,67 +99,44 @@ let pokemonRepository = (function () {
       });
   }
 
-  //adding a modal Window that will open and display name+heigh+and picture of pokemon
-  let modalContainer = document.querySelector("#modal-container");
-  //creating function to show modal window
-  function showModal(title, text,image) {
-    //setting the modal windwo to blank
-    modalContainer.innerHTML = "";
-
-    //adding elements to the modal window
-    let modal = document.createElement("div");
-    modal.classList.add("modal");
-
-    let imageElement = document.createElement("img");
-    imageElement.innerText = image
-    imageElement.classList.add("pic");
-    imageElement.src = image
-
-    let closeButtonElement = document.createElement("button");
-    closeButtonElement.classList.add("modal-close");
-    closeButtonElement.innerText = "X";
-    closeButtonElement.addEventListener("click", hideModal);
-
-    let titleElement = document.createElement("h1");
-    titleElement.innerText = title;
-
-    let contentElement = document.createElement("p");
-    contentElement.innerText = text;
-    // adding all the created elements to the modal window
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
-    modal.appendChild(imageElement);
-    modalContainer.appendChild(modal);
-
-    //adding  css class of "is-visible" to remove the default state of display=none
-    modalContainer.classList.add("is-visible");
+//adding bootstrap modal 
+function showModal(item){
+  let modalBody = $(".modal-body");
+  let modalTitle = $(".modal-title");
+  let modalHeader = $(".modal-header");
+  
+  //let $modalContainer = $("#modal-container")
+  
+  //clear existing content of the modal
+  
+  //modalHeader.empty();
+  modalTitle.empty();
+  modalBody.empty();
+  
+  //creating element for the name in modal content
+  let nameElement = $("<h1>" + item.name + "</h1>");
+  // creating img in mdal content
+  let imageElementFront = $('<img class="modal-img" style="width:50%">')
+  imageElementFront.attr("src", itemUrlFront);
+  let imageElementBack = $('<img class="modal-img"style="width:50%">');
+  imageElementBack.attr("src", item.imageUrlBack);
+  //creating element for height in modal content
+  let heightElement = $("<p>", + "height : " + item.height + "</p>");
+  //creating element for weight in modal content
+  let weightElement = $("<p>", + "weight : " + item.weight + "</p>");
+  //creating element for abilities in modal content
+  let abilitiesElement = $("<p>" + "abilities : " + item.abilities + "</p>");
+  
+  modalTitle.append(nameElement)
+  modalBody.append(imageElementFront)
+  modalBody.append(imageElementBack)
+  modalBody.append(heightElement)
+  modalBody.append(weightElement)
+  modalBody.append(typesElement)
+  modalBody.append(abilitiesElement)
+  
   }
-  //creae function to hide the modal window by removing the css class "is-visible"
-  function hideModal() {
-    modalContainer.classList.remove("is-visible");
-  }
-  //creating an event that will close the modal window with Escape button
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
-      hideModal();
-    }
-  });
-
-  //creating an event that will close the modal window when clicking on it
-  modalContainer.addEventListener("click", (e) => {
-    // Since this is also triggered when clicking INSIDE the modal
-    // We only want to close if the user clicks directly on the overlay
-    let target = e.target;
-    if (target === modalContainer) {
-      hideModal();
-    }
-  });
-
-  //creating and event that whill execute the showModal function to display information on click
-  document.querySelector("#show-modal").addEventListener("click", () => {
-    showModal();
-  });
+  
 
   //the showDetails() function is executed when a user clicks on a Pokémon and you get the Pokémon’s details from the server.
   //showDetails function will execute
