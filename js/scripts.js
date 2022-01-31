@@ -106,7 +106,7 @@ listItem.classList.add("group-list-item")
       });
   }
 
-//adding bootstrap modal 
+//adding items to display in the bootstrap modal 
 function showModal(item){
   let modalBody = $(".modal-body");
   let modalTitle = $(".modal-title");
