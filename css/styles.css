@@ -13,7 +13,6 @@
 
 body {
   background: var(--primary-color);
-
   color: var(--secondary-color);
   font-family: var(--primary-font);
 }
@@ -64,7 +63,4 @@ body {
   }
 }
 
-.pic {
-  height: auto;
-  width: 60%;
-}
+
