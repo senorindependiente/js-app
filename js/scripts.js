@@ -1,8 +1,9 @@
 //setting up an array list of objects for the profile of the diferent pokemons
 
 // "pokemonList" is wrapped into an IIFE and created new variable "pokemonRepository"
-let pokemonRepository = (function () {
+ let pokemonRepository = (function () {
   let pokemonList = [];
+
   //Pokemon API
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
@@ -50,7 +51,7 @@ let pokemonRepository = (function () {
     list.appendChild(listItem);
 
     //adding eventhandler to the button that will show the logged pokemon  on click
-    button.addEventListener("click", (event) => {
+    button.addEventListener("click", () => {
       showDetails(pokemon);
     });
   }
@@ -110,12 +111,8 @@ let pokemonRepository = (function () {
   function showModal(item) {
     let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
-    let modalHeader = $(".modal-header");
-
-    //let $modalContainer = $("#modal-container")
 
     //clear existing content of the modal
-    //modalHeader.empty();
     modalTitle.empty();
     modalBody.empty();
 
