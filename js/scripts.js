@@ -35,9 +35,9 @@ let pokemonRepository = (function () {
     let button = document.createElement("button");
 
     //adding a bootstrap class of button
-    button.classList.add("btn-primary") 
-    //adding data-set 
-    
+    button.classList.add("btn-primary");
+    //adding data-set
+
     // creating text inside the button element
     button.innerHTML = pokemon.name;
     //adding a classlist of button
@@ -45,7 +45,7 @@ let pokemonRepository = (function () {
     //add button as a list item
     listItem.appendChild(button);
     //adding bootstrap class "group-list-item"
-listItem.classList.add("group-list-item")
+    listItem.classList.add("group-list-item");
     //adding the list time to the main pokemon list
     list.appendChild(listItem);
 
@@ -106,37 +106,31 @@ listItem.classList.add("group-list-item")
       });
   }
 
-//adding items to display in the bootstrap modal 
-function showModal(item){
-  let modalBody = $(".modal-body");
-  let modalTitle = $(".modal-title");
-  let modalHeader = $(".modal-header");
-  
-  //let $modalContainer = $("#modal-container")
-  
-  //clear existing content of the modal
-  //modalHeader.empty();
-  modalTitle.empty();
-  modalBody.empty();
-  
-  //creating element for the name in modal content
-  let nameElement = $("<h1>" + item.name + "</h1>");
-  // creating img in mdal content
-  let imageElement = $('<img class="modal-img" style="width:50%">')
-  imageElement.attr("src", imageUrl);
-  //creating element for height in modal content
-  let heightElement = $("<p>", + "height : " + item.height + "</p>");
-  //creating element for types in modal content
-  let typesElement = $("<p>" + "types : " + item.types + "</p>");
-  
-  modalTitle.append(nameElement)
-  modalBody.append(imageElement)
-  modalBody.append(heightElement)
-  modalBody.append(typesElement)
- 
-  
+  //adding items to display in the bootstrap modal
+  function showModal(item) {
+    let modalBody = $(".modal-body");
+    let modalTitle = $(".modal-title");
+    let modalHeader = $(".modal-header");
+
+    //let $modalContainer = $("#modal-container")
+
+    //clear existing content of the modal
+    //modalHeader.empty();
+    modalTitle.empty();
+    modalBody.empty();
+
+    //creating element for the name in modal content
+    let nameElement = $("<h1>" + item.name + "</h1>");
+    // creating img in mdal content
+    let imageElement = $('<img class="modal-img" style="width:50%">');
+    imageElement.attr("src", item.imageUrl);
+    //creating element for height in modal content
+    let heightElement = $("<p>" + "height : " + item.height + "</p>");
+
+    modalTitle.append(nameElement);
+    modalBody.append(heightElement);
+    modalBody.append(imageElement);
   }
-  
 
   //the showDetails() function is executed when a user clicks on a Pokémon and you get the Pokémon’s details from the server.
   //showDetails function will execute
@@ -144,7 +138,7 @@ function showModal(item){
     //the loadDetails function with pokemon as parameter and adds a function as a promise and then to return a console log
     loadDetails(item).then(function () {
       //added name and height to display in the modal window dynamically
-      showModal(item.name, " Height: " + item.height, item.imageUrl);
+      showModal(item);
     });
   }
 
