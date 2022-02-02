@@ -11,10 +11,6 @@
   --third-color: #faf9f9;
 }
 
-.navbar {
-  background: var(--primary-color);
-  border-bottom: 1px solid white;
-}
 
 body {
   overflow-y: hidden;
@@ -23,11 +19,30 @@ body {
   font-family: var(--primary-font);
 }
 
+.navbar {
+  background: var(--primary-color);
+  border-bottom: 1px solid white;
+}
+
+#myInput{
+  float: right;
+  margin:0rem 1rem;
+  border:none;
+  border-radius: 5px;
+}
+
+input[type=text]{
+  padding:0.2rem;
+}
+
+
 .title {
   margin-top: 2rem;
   font-size: clamp(1.3rem, 4vw, 5rem);
   text-align: center;
 }
+
+
 
 .pokemon-list__container {
   margin: 0rem 4rem;
