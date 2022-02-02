@@ -10,5 +10,5 @@
 #### 2.CSS
 #### 3.Vanilla Javascript
 ### External Libraries
-#### 1. Boostrap
+#### 1. Bootstrap
 #### 2. JQUERY
