@@ -160,7 +160,7 @@ pokemonRepository.loadList().then(function () {
 
 
 //Added name filter function
-function myFunction() {
+function searchFilter() {
   var input, filter, ul, li, btn, i, txtValue;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
@@ -176,3 +176,5 @@ function myFunction() {
       }
   }
 }
+
+searchFilter()
