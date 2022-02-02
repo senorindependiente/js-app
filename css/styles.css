@@ -134,7 +134,7 @@ input[type=text]{
 
 .btn,
 .btn-primary {
-  font-size: clamp(0.7rem, 2vw, 1.8rem);
+  font-size: clamp(0.7rem, 3vw, 3rem);
   margin: 0.5rem;
   padding: 0.5rem 1rem;
   background-color: var(--secondary-color);
