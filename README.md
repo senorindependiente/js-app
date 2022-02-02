@@ -11,4 +11,4 @@
 #### 3.Vanilla Javascript
 ### External Libraries
 #### 1. Boostrap
-#### 2. QUERY
+#### 2. JQUERY
