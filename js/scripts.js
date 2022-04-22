@@ -1,7 +1,7 @@
 //setting up an array list of objects for the profile of the diferent pokemons
 
 // "pokemonList" is wrapped into an IIFE and created new variable "pokemonRepository"
- let pokemonRepository = (function () {
+let pokemonRepository = (function () {
   let pokemonList = [];
 
   //Pokemon API
@@ -158,7 +158,6 @@ pokemonRepository.loadList().then(function () {
   });
 });
 
-
 //Added name filter function
 function searchFilter() {
   var input, filter, ul, li, btn, i, txtValue;
@@ -167,14 +166,14 @@ function searchFilter() {
   ul = document.querySelector(".pokemon-list");
   li = ul.getElementsByTagName("li");
   for (i = 0; i < li.length; i++) {
-      btn = li[i].getElementsByTagName("button")[0];
-      txtValue = btn.textContent || btn.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          li[i].style.display = "";
-      } else {
-          li[i].style.display = "none";
-      }
+    btn = li[i].getElementsByTagName("button")[0];
+    txtValue = btn.textContent || btn.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
   }
 }
 
-searchFilter()
+searchFilter();
