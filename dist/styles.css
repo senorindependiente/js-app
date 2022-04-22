@@ -48,7 +48,7 @@ input[type="text"] {
   margin-left: 5rem;
   height: 75vh;
   width: 60vw;
-  background-image: url("./img/pokemonpic.png");
+  background-image: url("../img/pokemonpic.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
