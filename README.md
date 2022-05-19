@@ -12,3 +12,5 @@
 ### External Libraries
 #### 1. Bootstrap
 #### 2. JQUERY
+
+![Example screenshot](screenshot.PNG)
